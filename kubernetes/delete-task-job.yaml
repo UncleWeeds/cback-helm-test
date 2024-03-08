@@ -1,0 +1,15 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: delete-task-job
+spec:
+  template:
+    spec:
+      containers:
+      - name: delete-task
+        image: curlimages/curl:latest
+        env:
+        - name: TASK_ID
+          value: "2"
+        command: ["/bin/sh", "-c", "curl -X DELETE http://task-scheduler-service:5000/tasks/$TASK_ID"]
+      restartPolicy: Never

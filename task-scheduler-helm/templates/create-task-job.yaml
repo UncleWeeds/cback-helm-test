@@ -1,0 +1,17 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: create-task
+spec:
+  template:
+    spec:
+      containers:
+      - name: create-task
+        image: curlimages/curl:latest
+        command: ["/bin/sh", "-c"]
+        args:
+          - |
+            curl -X POST http://{{ .Values.taskSchedulerService.name }}:{{ .Values.taskSchedulerService.port }}/tasks/ \
+            -H "Content-Type: application/json" \
+            -d '{"name": "{{ .Values.task.name }}", "execution_time": "{{ .Values.task.executionTime }}" }'
+      restartPolicy: Never

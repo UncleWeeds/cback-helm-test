@@ -1,0 +1,15 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: fetch-task-details-job
+spec:
+  template:
+    spec:
+      containers:
+      - name: fetch-task-details
+        image: curlimages/curl:latest
+        env:
+        - name: TASK_ID
+          value: "5"
+        command: ["/bin/sh", "-c", "curl -X GET http://task-scheduler-service:5000/tasks/$TASK_ID"]
+      restartPolicy: Never

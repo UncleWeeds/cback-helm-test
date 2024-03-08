@@ -1,0 +1,15 @@
+taskSchedulerService:
+  name: task-scheduler-service
+  port: 5000
+
+task:
+  name: Sample Task
+  executionTime: "2024-01-01T10:00:00"
+
+mariadb:
+  enabled: true
+  auth:
+    rootPassword: "change-me"
+    database: "taskdb"
+    username: "taskuser"
+    password: "change-me"

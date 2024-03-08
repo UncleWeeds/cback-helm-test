@@ -1,0 +1,8 @@
+apiVersion: v2
+name: my-task-scheduler
+version: 0.1.0
+dependencies:
+  - name: mariadb
+    version: 16.5.0
+    repository: "https://charts.bitnami.com/bitnami"
+    condition: mariadb.enabled
