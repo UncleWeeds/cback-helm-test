@@ -47,18 +47,18 @@ For testing purposes, You can use these commands:
 
 To test all the tasks:
 
-`curl -X GET http://127.0.0.1:5000/tasks`
+`curl -X GET http://127.0.0.1:5000/tasks/`
 
 To create a Normal Task:
 
-`curl -X POST http://127.0.0.1:5000/tasks/ \
--H 'Content-Type: application/json' \
+`curl -X POST http://127.0.0.1:5000/tasks/ 
+-H 'Content-Type: application/json' 
 -d '{"name": "One-time Task", "execution_time": "2024-03-07T20:30:00"}'`
 
 For Recurring Tasks: 
 
-`curl -X POST http://127.0.0.1:5000/tasks/ \
--H 'Content-Type: application/json' \
+`curl -X POST http://127.0.0.1:5000/tasks/ 
+-H 'Content-Type: application/json' 
 -d '{"name": "Daily Task", "execution_time": "2024-03-07T20:35:00", "recurrence": "daily"}'`
 
 To get a single task: 
