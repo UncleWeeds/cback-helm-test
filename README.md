@@ -106,7 +106,7 @@ The Kubernetes jobs allow you to perform CRUD operations on the tasks within the
 
    `kubectl get jobs`
 
-   `kubectl get pods --selector=job-name=<job-name>`
+   `kubectl get pods --selector=job-name=fetch-all-tasks-job`
 
    `kubectl logs <pod-name>`
 
