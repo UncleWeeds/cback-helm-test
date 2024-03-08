@@ -141,7 +141,7 @@ This project includes a Helm chart for deploying the Task Scheduler application 
 
     `helm upgrade --install task-scheduler-release path/to/helm-chart`
 
-   `helm upgrade --install task-scheduler-release path/to/helm-chart \
+   `helm upgrade --install task-scheduler-release path/to/helm-chart 
   --set task.name="New Task Name",task.executionTime="2024-02-02T12:00:00"`
 
    
